@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=latin-ext" rel="stylesheet">
+</head>
+<body>
+<h1 class="register-heading register-heading--main">REGISTER</h1>
+
+
+<main class="crud container">
+  <section class="datatable">
+    <h2>Register new user</h2>
+    <form
+            class="datatable__row datatable__row--add"
+            method="POST"
+            action="http://localhost:8080/v1/createUser"
+            data-user-add-form
+    >
+      <fieldset class="datatable__row-section datatable__row-section--input-section">
+        <label class="datatable__input-label">
+          First name:
+        </label>
+        <input type="text" name="firstName" placeholder="Insert your name" required minlength="3">
+      </fieldset>
+
+      <fieldset class="datatable__row-section datatable__row-section--input-section">
+        <label class="datatable__input-label">
+          Last name:
+        </label>
+        <input type="text" name="lastName" placeholder="Insert your surname" required minlength="3">
+      </fieldset>
+
+      <fieldset class="datatable__row-section datatable__row-section--input-section">
+        <label class="datatable__input-label">
+          Login
+        </label>
+        <input type="text" name="login" placeholder="Insert your login" required minlength="3">
+      </fieldset>
+
+      <fieldset class="datatable__row-section datatable__row-section--input-section">
+        <label class="datatable__input-label">
+          E-mail
+        </label>
+        <input type="text" name="email" placeholder="Insert your email" required minlength="3">
+      </fieldset>
+
+      <fieldset class="datatable__row-section datatable__row-section--input-section">
+        <label class="datatable__input-label">
+          Password
+        </label>
+        <input type="text" name="password" placeholder="Insert your password" required minlength="3">
+      </fieldset>
+
+
+      <fieldset class="datatable__row-section datatable__row-section--button-section">
+        <button type="submit" data-user-add-button class="datatable__button">Register</button>
+      </fieldset>
+    </form>
+  </section>
+  <section class="datatable">
+    <h2>All Users</h2>
+    <div class="datatable__users-container" data-users-container></div>
+  </section>
+
+</main>
+
+<div class="template" data-datatable-row-template>
+  <form class="datatable__row" data-user-id="0">
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-firstName-section>
+      <label class="datatable__input-label">
+        First name
+      </label>
+      <p class="datatable__field-value" data-firstName-paragraph></p>
+    </fieldset>
+
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-lastName-section>
+      <label class="datatable__input-label">
+        Last name
+      </label>
+
+      <p class="datatable__field-value" data-lastName-paragraph></p>
+    </fieldset>
+
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-login-section>
+      <label class="datatable__input-label">
+        Login
+      </label>
+
+      <p class="datatable__field-value" data-login-paragraph></p>
+    </fieldset>
+
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-email-section>
+      <label class="datatable__input-label">
+        Email
+      </label>
+
+      <p class="datatable__field-value" data-email-paragraph></p>
+    </fieldset>
+
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-password-section>
+      <label class="datatable__input-label">
+        Password
+      </label>
+
+      <p class="datatable__field-value" data-password-paragraph></p>
+    </fieldset>
+
+
+
+    <div class="datatable__row-section-wrapper">
+      <fieldset class="datatable__row-section datatable__row-section--button-section">
+        <button type="button" data-user-delete-button class="datatable__button">Delete</button>
+      </fieldset>
+    </div>
+  </form>
+</div>
+
+
+
+<script src="jquery-3.4.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
